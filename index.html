@@ -23,9 +23,9 @@
 
             <h2 id="project_tagline" class="fadein scaleInv anim_3">Less//Css classes for cool web pages</h2>
 
-            <section id="downloads" class="fadein scaleInv anim_14">
-            	<a class="zip_download_link" href="https://github.com/Gummibearlab/Yummi-loader/zipball/master">Download this project as a .zip file</a>
-            	<a class="tar_download_link" href="https://github.com/Gummibearlab/Yummi-loader/tarball/master">Download this project as a tar.gz file</a>
+            <section id="downloads" class="fadein scaleInv anim_15">
+            	<a class="zip_download_link fadein scaleInv anim_17" href="https://github.com/Gummibearlab/Yummi-loader/zipball/master">Download this project as a .zip file</a>
+            	<a class="tar_download_link fadein scaleInv anim_16" href="https://github.com/Gummibearlab/Yummi-loader/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div><!-- MAIN CONTENT -->
@@ -58,9 +58,9 @@
 <code>@iterations:	15;	// number of elements to apply effects on
 @delay:		0.15;	// delay between elements transitions</code></pre>
 
-            <p class="fadein scaleInv anim_9">There are some other options you can set, that's up to you. </p>
+            <p class="fadein scaleInv anim_11">There are some other options you can set too, that's up to you. </p>
 
-            <pre class="fadein scaleInv anim_10">
+            <pre class="fadein scaleInv anim_12">
 <code>@opacity_start: 		0;
 @opacity_finish:		1;
 @opacity_speed_in:		0.5s; 	// seconds
@@ -70,18 +70,19 @@
 @opacity_easing_in: 		cubic-bezier(0,0,1,1);
 @opacity_easing_out:		cubic-bezier(0,0,1,1);</code></pre>
 
+            <p class="fadein scaleInv anim_13">You can compile the LESS file with one of these <a href="https://github.com/less/less.js/wiki/GUI-compilers-that-use-LESS.js" target="_blank">compilers</a>. </p>
 
-            <h3 class="fadein scaleInv anim_12"><a name="support-or-contact" class="anchor" href="#support-or-contact"></a>Support or Contact</h3>
+            <h3 class="fadein scaleInv anim_14"><a name="support-or-contact" class="anchor" href="#support-or-contact"></a>Support or Contact</h3>
 
-            <p class="fadein scaleInv anim_13">Having trouble or suggestions? Tweet me <a href="https://twitter.com/gummibear_lab">@gummibear_lab</a>.</p>
+            <p class="fadein scaleInv anim_15">Having trouble or suggestions? Tweet me <a href="https://twitter.com/gummibear_lab" target="_blank">@gummibear_lab</a>.</p>
         </section>
     </div><!-- FOOTER  -->
 
     <div id="footer_wrap" class="outer">
         <footer class="inner fadein scaleInv anim_2">
-            <p class="copyright fadein scaleInv anim_14">Yummi-loader maintained by <a href="https://github.com/Gummibearlab">Gummibearlab</a></p>
+            <p class="copyright fadein scaleInv anim_16">Yummi-loader maintained by <a href="https://github.com/Gummibearlab" target="_blank">Gummibearlab</a></p>
 
-            <p class="fadein scaleInv anim_15">Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+            <p class="fadein scaleInv anim_17">Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
         </footer>
     </div>
 
@@ -89,22 +90,23 @@
 
 	</script><script type="text/javascript">
 
+		var $body = $('body');
+
         $(window).load(function() {
 
-            $('body').toggleClass('on off');
+            $body.toggleClass('on off');
 
             $('.on_off').click(function() {
 
-                $('body').toggleClass('on off');
+                $body.toggleClass('on off');
 
                 setTimeout(function() {
 
-                    $('body').toggleClass('on off');
+                    $body.toggleClass('on off');
 
                 }, 3000)
 
             });
-
 
         });
 
