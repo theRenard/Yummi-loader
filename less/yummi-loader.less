@@ -1,0 +1,97 @@
+@import "lesshat.less";
+
+// VARIABLES
+
+// ITERATIONS -> credits goes to : http://blog.thehippo.de/2012/04/programming/do-a-loop-with-less-css/
+
+@iterations: 15;			// number of elements to apply effects on
+@delay: 0.15; 	// delay between elements transitions
+
+// OPACITY
+
+@opacity_start: 		0;
+@opacity_finish:		1;
+@opacity_speed_in:		0.5s; 	// seconds
+@opacity_speed_out:		0.5s; 	// seconds
+@opacity_delay_in:		0.5s; 	// seconds
+@opacity_delay_out:		0.5s; 	// seconds
+@opacity_easing_in: 	cubic-bezier(0,0,1,1);
+@opacity_easing_out:	cubic-bezier(0,0,1,1);
+
+// SCALE
+
+@scale_start: 			1.1;
+@scale_start_inv:		0.9;
+@scale_finish:			1;
+@scale_speed_in:		0.5s;
+@scale_speed_out:		0.5s;
+@scale_delay_in:		0.5s;
+@scale_delay_out:		0.5s;
+@scale_easing_in:		cubic-bezier(0.175, 0.885, 0.320, 1.275); // ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(0,0,1,1)
+@scale_easing_out:		cubic-bezier(0.600, -0.280, 0.735, 0.045);
+@scale_origin: 			center center; // [ left | center | right ] || [ top | center | bottom ]
+
+.fadein {
+	//.transition(opacity);
+	.off &, &.off {
+		.opacity(@opacity_start);
+		.transition-timing-function(@opacity_easing_out);
+		.transition-duration(@opacity_speed_out);
+
+	}
+	.on &, &.on {
+		.opacity(@opacity_finish);
+		.transition-timing-function(@opacity_easing_in);
+		.transition-duration(@opacity_speed_in);
+	}
+}
+
+.scale, scaleInv {
+	.transform-style(preserve-3d);
+	//.transition(scale);
+	.transform-origin(@scale_origin);
+	.off &, &.off {
+		.scale(@scale_start);
+		.transition-timing-function(@scale_easing_out);
+		.transition-duration(@scale_speed_out);
+	}
+	.on &, &.on {
+		.scale(@scale_finish);
+		.transition-timing-function(@scale_easing_in);
+		.transition-duration(@scale_speed_in);
+	}
+}
+
+.scaleInv {
+	.off &, &.on {
+		.scale(@scale_start_inv);
+		.transition-timing-function(@scale_easing_out);
+	}
+	.on &, &.on {
+		.transition-timing-function(@scale_easing_in);
+	}
+}
+
+.loopingClass (@index) when (@index > 0) {
+
+	(~".anim_@{index}") {
+		// .transition-duration(@scale_speed_out + @index); 	if you want to change the animation speed on index base
+		.off &, &.off {
+			.transition-delay(((unit(@iterations, s)) - @index) * @delay);
+			// no 1 ma 0.25
+			// no 2 ma 0.50
+		}
+		.on &, &.on {
+			.transition-delay(@opacity_delay_in + (@index * @delay));
+		}
+	}
+
+	.loopingClass(@index - 1);
+}
+
+.loopingClass (0) {}
+.loopingClass (@iterations);
+
+// zooming on body elements causes horizontal bar to appear.
+
+body { overflow-x: hidden }
