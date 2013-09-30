@@ -41,3 +41,4 @@ You can compile LESS files using one of these compilers.
 
 Support or Contact
 Having trouble or suggestions? Tweet me @gummibear_lab.
+Github page: <http://gummibearlab.github.io/Yummi-loader/>
