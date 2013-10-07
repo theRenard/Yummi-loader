@@ -1,5 +1,5 @@
 /*
-yummi-loader.css - http://gummibearlab.github.io/Yummi-loader/
+yummi-loader.css - V.1.1 http://gummibearlab.github.io/Yummi-loader/
 Licensed under the MIT license
 
 Copyright (c) 2013 Daniele Tabanella (gummibearlab)
@@ -11,6 +11,10 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 /* we have 8 elements in this demo with a delay of 0.15ms this css is just a pre-compiled sample, you should compile your own .less file. */
+/* if you have trubles with less compilers that uses versions <1.4 use this loop FROM .anim_@{index} { TO (~".anim_@{index}") { */
+body {
+  overflow-x: hidden;
+}
 .off .fadein,
 .fadein.off {
   -webkit-opacity: 0;
@@ -217,7 +221,4 @@ scaleInv.on {
   -moz-transition-delay: 0.65s;
   -o-transition-delay: 0.65s;
   transition-delay: 0.65s;
-}
-body {
-  overflow-x: hidden;
 }

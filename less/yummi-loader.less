@@ -1,5 +1,5 @@
 /*
-yummi-loader.css - http://gummibearlab.github.io/Yummi-loader/
+yummi-loader.css - V.1.1 http://gummibearlab.github.io/Yummi-loader/
 Licensed under the MIT license
 
 Copyright (c) 2013 Daniele Tabanella (gummibearlab)
@@ -16,9 +16,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 // VARIABLES
 
 /* we have 8 elements in this demo with a delay of 0.15ms this css is just a pre-compiled sample, you should compile your own .less file. */
+/* if you have trubles with less compilers that uses versions <1.4 use this loop FROM .anim_@{index} { TO (~".anim_@{index}") { */
+
 
 @iterations: 8;	// number of elements to apply effects on
 @delay: 0.15; 	// delay between elements transitions
+
+body { overflow-x: hidden } // zooming on body element causes horizontal bar to appear. Optional.
 
 // OPACITY
 
@@ -83,20 +87,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	}
 }
 
-// ITERATIONS -> credits goes to : http://blog.thehippo.de/2012/04/programming/do-a-loop-with-less-css/
+// ITERATIONS -> credits goes to : http://blog.thehippo.de/2012/04/programming/do-a-loop-with-less-css/ updated for LESS > v1.4 see note on top if you get errors on this loop.
 
 .loopingClass (@index) when (@index > 0) {
 
-	(~".anim_@{index}") {
-		// .transition-duration(@scale_speed_out + @index); 	if you want to change the animation speed on index base
+	.anim_@{index} {		// .transition-duration(@scale_speed_out + @index); 	if you want to change the animation speed on index base
 		.off &, &.off {
 			.transition-delay(((unit(@iterations, s)) - @index) * @delay);
-			// no 1 ma 0.25
-			// no 2 ma 0.50
 		}
 		.on &, &.on {
 			.transition-delay(@opacity_delay_in + (@index * @delay));
 		}
+
 	}
 
 	.loopingClass(@index - 1);
@@ -104,6 +106,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .loopingClass (0) {}
 .loopingClass (@iterations);
-
-
-body { overflow-x: hidden } // zooming on body element causes horizontal bar to appear. Optional.
