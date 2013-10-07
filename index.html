@@ -54,15 +54,24 @@
   $('body').toggleClass('on off');
 });</code></pre>
 
-            <p class="fadein scaleInv anim_9">Configuring the LESS file is easy, just choose the number of elements you are working with, the delay between each other and your are good to go.</p>
+
+
+
+
+            <p class="fadein scaleInv anim_9">You can also use an optional handy little jQuery plugin that waits for animation to end before opening a link. Usage is straightforward just add `.trigger` class to any link you wish to apply this effect to.</p>
 
             <pre class="fadein scaleInv anim_10">
+<code>&lt;a class=&quot;trigger&quot; href=&quot;example.html&quot;&gt;I'm a fancy link&lt;/a&gt;</code></pre>
+
+			<p class="fadein scaleInv anim_11">Configuring the LESS file is easy, just choose the number of elements you are working with, the delay between each other and your are good to go.</p>
+
+            <pre class="fadein scaleInv anim_12">
 <code>@iterations:	15;	// number of elements to apply effects on
 @delay:		0.15;	// delay between elements transitions</code></pre>
 
-            <p class="fadein scaleInv anim_11">There are some other options you can set too, it's up to you. </p>
+            <p class="fadein scaleInv anim_13">There are some other options you can set too, it's up to you. </p>
 
-            <pre class="fadein scaleInv anim_12">
+            <pre class="fadein scaleInv anim_14">
 <code>@opacity_start: 		0;
 @opacity_finish:		1;
 @opacity_speed_in:		0.5s; 	// seconds
@@ -72,14 +81,14 @@
 @opacity_easing_in: 		cubic-bezier(0,0,1,1);
 @opacity_easing_out:		cubic-bezier(0,0,1,1);</code></pre>
 
-            <p class="fadein scaleInv anim_13">
+            <p class="fadein scaleInv anim_15">
             	Yummi-loader uses lesshat mixing, you can download it <a href="http://lesshat.com">here</a>. <br>
             	You can compile LESS files using one of these <a href="https://github.com/less/less.js/wiki/GUI-compilers-that-use-LESS.js" target="_blank">compilers</a>.
             </p>
 
-            <h3 class="fadein scaleInv anim_14"><a name="support-or-contact" class="anchor" href="#support-or-contact"></a>Support or Contact</h3>
+            <h3 class="fadein scaleInv anim_16"><a name="support-or-contact" class="anchor" href="#support-or-contact"></a>Support or Contact</h3>
 
-            <p class="fadein scaleInv anim_15">Having trouble or suggestions? Tweet me <a href="https://twitter.com/gummibear_lab" target="_blank">@gummibear_lab</a>.</p>
+            <p class="fadein scaleInv anim_17">Having trouble or suggestions? Tweet me <a href="https://twitter.com/gummibear_lab" target="_blank">@gummibear_lab</a>.</p>
 
         </section>
 
@@ -89,8 +98,8 @@
 
         <footer class="inner fadein scaleInv anim_2">
 
-            <p class="copyright fadein scaleInv anim_16">Yummi-loader maintained by <a href="https://github.com/Gummibearlab" target="_blank">Gummibearlab</a></p>
-            <p class="fadein scaleInv anim_17">Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
+            <p class="copyright fadein scaleInv anim_18">Yummi-loader maintained by <a href="https://github.com/Gummibearlab" target="_blank">Gummibearlab</a></p>
+            <p class="fadein scaleInv anim_19">Published with <a href="http://pages.github.com" target="_blank">GitHub Pages</a></p>
 
         </footer>
 
@@ -114,7 +123,7 @@
 
                     $body.toggleClass('on off');
 
-                }, 3000)
+                }, 3500)
 
             });
 
